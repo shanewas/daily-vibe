@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "daily-vibe"
+version = "0.1.0"
+description = "📓 DailyVibe (dv) — Your dev journal that actually feels good"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Shanewas Ahmed", email = "shanewasahmed@gmail.com"}]
+keywords = ["journal", "diary", "productivity", "reflection", "cli", "vibe", "streak"]
+dependencies = [
+  "typer[all]>=0.15.1",
+  "rich>=13.9.4",
+]
+
+[project.scripts]
+dv = "daily_vibe.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/shanewas/daily-vibe"
+Repository = "https://github.com/shanewas/daily-vibe"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/daily_vibe"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
